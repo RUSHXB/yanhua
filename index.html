@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <!-- This web page is copied by "https://bazhan.wang" --><html><head><meta charset="utf-8">
 <link rel="stylesheet" id='font-awesome-css' href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" type='text/css' media='all'>
+    <script type="text/javascript">
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                play = function () {
+                    audio.play();
+                    document.removeEventListener("touchstart", play, false);
+                };
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function () {
+                play();
+            }, false);
+            document.addEventListener("touchstart", play, false);
+        }
+        audioAutoPlay('Jaudio');
+    </script>
 </head>
 <body>
 	
@@ -142,9 +160,9 @@ span:nth-child(9){
 			<img src="https://pic.imgdb.cn/item/638ee8fbb1fccdcd360398db.gif" width="1000" height="650">
 		</div>
 	
-<audio controls autoplay>
-    <source src="http://s5c67pnnq.hn-bkt.clouddn.com/%E6%9E%97%E5%80%9B%E7%8E%89-%E5%90%8C%E8%8A%B1%E9%A1%BA.mp3" type="audio/mp3">
-    Your browser does not support the audio tag.
-</audio>
+<audio controls autoplay id="Jaudio">
+        <source src="http://s5c67pnnq.hn-bkt.clouddn.com/%E6%9E%97%E5%80%9B%E7%8E%89-%E5%90%8C%E8%8A%B1%E9%A1%BA.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
 </body>
 </html>
