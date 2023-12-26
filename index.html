@@ -163,6 +163,17 @@ span:nth-child(9){
 <div><audio controls autoplay id="Jaudio">
         <source src="12.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
-    </audio></div>	
+    </audio></div>
+	
 </body>
+<script type="text/javascript"> 
+$(document).ready(function () {  
+            if (!sessionStorage.getItem("bgm")) {  
+                 $("#bgmvideo").append(  
+                    '<audio src="url.mp3" autoplay hidden></audio>'  
+                );  
+                sessionStorage.setItem("bgm", 1)  
+            }  
+        })  
+</script>
 </html>
