@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <!-- This web page is copied by "https://bazhan.wang" --><html><head><meta charset="utf-8">
 <link rel="stylesheet" id='font-awesome-css' href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" type='text/css' media='all'>
-    <script type="text/javascript">
-        function audioAutoPlay(id) {
-            var audio = document.getElementById(id),
-                play = function () {
-                    audio.play();
-                    document.removeEventListener("touchstart", play, false);
-                };
-            audio.play();
-            document.addEventListener("WeixinJSBridgeReady", function () {
-                play();
-            }, false);
-            document.addEventListener('YixinJSBridgeReady', function () {
-                play();
-            }, false);
-            document.addEventListener("touchstart", play, false);
-        }
-        audioAutoPlay('Jaudio');
-    </script>
+   <script type="text/javascript"> 
+$(document).ready(function () {  
+            if (!sessionStorage.getItem("bgm")) {  
+                 $("#bgmvideo").append(  
+                    '<audio src="url.mp3" autoplay hidden></audio>'  
+                );  
+                sessionStorage.setItem("bgm", 1)  
+            }  
+        })  
+</script>
 </head>
 <body>
 	
@@ -166,14 +158,5 @@ span:nth-child(9){
     </audio></div>
 	
 </body>
-<script type="text/javascript"> 
-$(document).ready(function () {  
-            if (!sessionStorage.getItem("bgm")) {  
-                 $("#bgmvideo").append(  
-                    '<audio src="url.mp3" autoplay hidden></audio>'  
-                );  
-                sessionStorage.setItem("bgm", 1)  
-            }  
-        })  
-</script>
+
 </html>
